@@ -1,11 +1,19 @@
 const deepCopyObject = (obj) => {
-  let newObj = {};
-  for (let i in obj) {
-    if (obj[i] instanceof Object) {
-      newObj[i] = deepCopyObject(obj[i]);
-      continue;
+  if (Array.isArray(obj)) {
+    const copy = [];
+    for (let [index, value] of obj.entries()) {
+      copy[index] = deepCopyObject(value);
     }
-    newObj[i] = obj[i];
+    return copy;
   }
-  return newObj;
+
+  if (typeof obj === 'object' && obj !== null) {
+    const copy = {};
+    for (let [key, value] of Object.entries(obj)) {
+      copy[key] = deepCopyObject(value);
+    }
+    return copy;
+  }
+
+  return obj;
 };
