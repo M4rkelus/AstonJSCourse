@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Гонки на выживание</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="game">
+        <div class="game__menu">
+          <div class="car-select">
+            <h2 class="car-select__title">Выберите машину</h2>
+            <div class="car-select__list">
+              <div class="car-select__car-type car-select__car-type_civil">
+                <h3 class="car-select__name">Гражданский автомобиль</h3>
+                <ul class="car-select__stat-list">
+                  <li>
+                    <div>
+                      <span class="car-select__stat car-select__stat_fuel">
+                      </span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_consumption"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_durability"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_speed"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="car-select__car-type car-select__car-type_sport">
+                <h3 class="car-select__name">Спортивный автомобиль</h3>
+                <ul class="car-select__stat-list">
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_fuel"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_consumption"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_durability"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_speed"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="car-select__car-type car-select__car-type_military">
+                <h3 class="car-select__name">Военный автомобиль</h3>
+                <ul class="car-select__stat-list">
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_fuel"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_consumption"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_durability"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                      <span
+                        class="car-select__stat car-select__stat_speed"
+                      ></span>
+                      <button class="car-select__add-stat">+</button>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="oponents-select">
+            <h2 class="oponents-select__title">Выберите кол-во оппонентов</h2>
+            <form class="oponents-select__from">
+              <input
+                type="text"
+                placeholder="от 1 до 15"
+                class="oponents-select__input"
+              />
+              <button type="submit" class="oponents-select__button" disabled>
+                Выбрать
+              </button>
+            </form>
+          </div>
+
+          <div class="compare">
+            <h2 class="compare__title">Сравнение характеристик</h2>
+            <button class="compare__button">Сравнить</button>
+          </div>
+        </div>
+
+        <div class="road">
+          <ul class="road__cars"></ul>
+        </div>
+        <div class="controls">
+          <button class="game__button game__button_start">Старт</button>
+          <button class="game__button game__button_restart">Новая игра</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popup__content">
+        <h2 class="popup__title">Сравнение характеристик</h2>
+        <ul class="popup__compare-list"></ul>
+      </div>
+    </div>
+
+    <template id="compare-list">
+      <li class="car">
+        <h2 class="car__name"></h2>
+        <div class="car__stat-list">
+          <div class="car__stat">
+            <span class="car__power-reserve-name">Топливо</span>
+            <span class="car__power-reserve-value"></span>
+          </div>
+          <div class="car__stat">
+            <span class="car__durability-name">Расход топлива</span>
+            <span class="car__durability-value"></span>
+          </div>
+          <div class="car__stat">
+            <span class="car__durability-name">Прочность</span>
+            <span class="car__durability-value"></span>
+          </div>
+          <div class="car__stat">
+            <span class="car__speed-name">Скорость</span>
+            <span class="car__speed-value"></span>
+          </div>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

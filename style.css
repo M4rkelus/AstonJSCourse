@@ -1,0 +1,138 @@
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.game {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.game__menu {
+  display: flex;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+  padding: 5px;
+  gap: 10px;
+}
+
+.car-select,
+.oponents-select,
+.compare {
+  display: flex;
+  padding: 5px;
+  border: 1px solid #000;
+  align-items: center;
+  flex-direction: column;
+}
+
+.car-select__title,
+.oponents-select__title,
+.compare__title {
+  text-align: center;
+}
+
+.car-select__list {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.car-select__name {
+  text-align: center;
+  padding: 0;
+  margin: 0 0 10px;
+}
+
+.car-select__car-type {
+  width: 170px;
+  padding: 10px;
+  border: 3px solid #616161;
+  background-color: #fff;
+}
+
+.car-select__car-type:hover {
+  border: 3px solid #18ce18;
+  cursor: pointer;
+}
+
+.car-select__stat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.car-select__add-stat {
+  visibility: hidden;
+}
+
+.car-select__active {
+  background-color: #78ff78;
+  border: 3px solid #1389ea;
+}
+
+.car-select__active .car-select__add-stat {
+  visibility: visible;
+}
+
+.road {
+  width: 100%;
+  height: 500px;
+  background: rgb(130, 130, 131);
+  background: linear-gradient(
+    0deg,
+    rgba(130, 130, 131, 1) 49%,
+    rgba(255, 255, 255, 1) 50%,
+    rgba(130, 130, 131, 1) 51%
+  );
+  position: relative;
+}
+
+.road__cars {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.road__car {
+  width: 90px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+/* .road__car_civil {
+  background: url(https://c1.klipartz.com/pngpicture/530/76/sticker-png-cars-vehicle-sports-car-hino-dutro-truck-hino-motors-car-door.png)
+    no-repeat center/cover;
+}
+
+.road__car_sport {
+  background-image: url(https://wall.grahapatria.com/wp-content/uploads/2022/09/887d9872643d696f81599530d6e79fc1.png);
+}
+
+.road__car_military {
+  background-image: url(https://farkopros.ru/upload/iblock/e0a/em7irw1bij0uvhji2cugorbq4ouyphhy/Thule%20Motion%20XT%20XL%20Серебристый.jpg);
+} */
+
+.road__car_user {
+  background-color: #18ce18;
+}
+
+.road__car_oponent {
+  background-color: #ea1818;
+}
+
+.done {
+  background-color: #b3fcb3;
+}
