@@ -19,14 +19,14 @@
                 <h3 class="car-select__name">Гражданский автомобиль</h3>
                 <ul class="car-select__stat-list">
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span class="car-select__stat car-select__stat_fuel">
                       </span>
                       <button class="car-select__add-stat">+</button>
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_consumption"
                       ></span>
@@ -34,7 +34,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_durability"
                       ></span>
@@ -42,7 +42,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_speed"
                       ></span>
@@ -56,7 +56,7 @@
                 <h3 class="car-select__name">Спортивный автомобиль</h3>
                 <ul class="car-select__stat-list">
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_fuel"
                       ></span>
@@ -64,7 +64,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_consumption"
                       ></span>
@@ -72,7 +72,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_durability"
                       ></span>
@@ -80,7 +80,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_speed"
                       ></span>
@@ -94,7 +94,7 @@
                 <h3 class="car-select__name">Военный автомобиль</h3>
                 <ul class="car-select__stat-list">
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_fuel"
                       ></span>
@@ -102,7 +102,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_consumption"
                       ></span>
@@ -110,7 +110,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_durability"
                       ></span>
@@ -118,7 +118,7 @@
                     </div>
                   </li>
                   <li>
-                    <div>
+                    <div class="car-select__stat-container">
                       <span
                         class="car-select__stat car-select__stat_speed"
                       ></span>
@@ -150,20 +150,27 @@
           </div>
         </div>
 
+        <div class="panel">
+          <span class="panel__power-reserv">Запас хода:</span>
+          <div class="panel__controls">
+            <button class="panel__button panel__button_start">Старт</button>
+            <button class="panel__button panel__button_restart">
+              Новая игра
+            </button>
+          </div>
+        </div>
+
         <div class="road">
           <ul class="road__cars"></ul>
-        </div>
-        <div class="controls">
-          <button class="game__button game__button_start">Старт</button>
-          <button class="game__button game__button_restart">Новая игра</button>
         </div>
       </div>
     </div>
 
-    <div class="popup">
+    <div class="popup popup_hidden">
       <div class="popup__content">
         <h2 class="popup__title">Сравнение характеристик</h2>
         <ul class="popup__compare-list"></ul>
+        <button class="popup__button">Закрыть</button>
       </div>
     </div>
 

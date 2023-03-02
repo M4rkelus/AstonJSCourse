@@ -45,15 +45,25 @@ const militaryCarSpeed = militaryCar.querySelector('.car-select__stat_speed');
 // Опоненты
 const oponentsForm = document.querySelector('.oponents-select__from');
 
+// Панель убправления
+const controlPanel = document.querySelector('.panel');
+const powerReserveEl = controlPanel.querySelector('.panel__power-reserv');
+
 // Дорога
 const road = document.querySelector('.road');
 const roadCars = road.querySelector('.road__cars');
+
+// Попап
+const popup = document.querySelector('.popup');
 
 // Кнопки
 const cardBtns = document.querySelectorAll('.car-select__add-stat');
 const oponentsInput = document.querySelector('.oponents-select__input');
 const oponentsBtn = document.querySelector('.oponents-select__button');
 const compareBtn = document.querySelector('.compare__button');
+const startBtn = controlPanel.querySelector('.panel__button_start');
+const restartBtn = controlPanel.querySelector('.panel__button_restart');
+const popupCloseBtn = popup.querySelector('.popup__button');
 
 /* Конструкторы */
 class Car {
@@ -69,7 +79,6 @@ class Car {
     const totalPoints =
       this.fuel + this.lowFuelConsumption + this.durability + this.speed;
     if (totalPoints < 12) {
-      console.log(totalPoints);
       this[parametr] += 1;
     }
     if (totalPoints === 12) {
@@ -276,7 +285,6 @@ const handleCardBtnClick = (evt) => {
     userCar.speed;
 
   if (totalPoints === 12) {
-    // cardBtns.forEach((btn) => (btn.disabled = true));
     return alert('Вы не можете набрать больше 12 очков');
   }
 
@@ -301,6 +309,7 @@ const handleCardBtnClick = (evt) => {
 
   carStat.textContent =
     str.slice(0, str.length - 1) + (+str.charAt(str.length - 1) + 1);
+  powerReserveEl.textContent = `Запас хода: ${userCar.getPowerReserve()}`;
 };
 
 let cars = [];
@@ -329,21 +338,45 @@ const handleOponentBtnClick = (evt) => {
 };
 
 const handleCompareBtnClick = () => {
-  const carListEl = buildCompareList([userCar, ...cars]);
-  console.log(carListEl);
+  if (userCar === null || cars.length === 0) return;
+  if (compareSelect.classList.contains('done')) {
+    popup.classList.remove('popup_hidden');
+    return;
+  }
+
+  buildCompareList([userCar, ...cars]);
   compareSelect.classList.add('done');
+  popup.classList.remove('popup_hidden');
+};
+
+const hendlePopupClose = () => {
+  popup.classList.add('popup_hidden');
+};
+
+const handleStartBtnClick = () => {
+  alert('Полная версия доступна после покупки. Стоимость 1000 рублей.');
+};
+
+const handleRestartBtnClick = () => {
+  location.reload();
+};
+
+/* Слушатели */
+const addEventListeners = () => {
+  carCards.forEach((card) => card.addEventListener('click', handleCardClick));
+  cardBtns.forEach((btn) => btn.addEventListener('click', handleCardBtnClick));
+  oponentsBtn.addEventListener('click', handleOponentBtnClick);
+  compareBtn.addEventListener('click', handleCompareBtnClick);
+  startBtn.addEventListener('click', handleStartBtnClick);
+  restartBtn.addEventListener('click', handleRestartBtnClick);
+  popupCloseBtn.addEventListener('click', hendlePopupClose);
 };
 
 const init = () => {
   setCivCarStats();
   setSportCarStats();
   setMilitaryCarStats();
+  addEventListeners();
 };
 
 init();
-
-/* Слушатели */
-carCards.forEach((card) => card.addEventListener('click', handleCardClick));
-cardBtns.forEach((btn) => btn.addEventListener('click', handleCardBtnClick));
-oponentsBtn.addEventListener('click', handleOponentBtnClick);
-compareBtn.addEventListener('click', handleCompareBtnClick);

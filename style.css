@@ -1,3 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: no-repeat center/ cover
+    url(https://static.kinguin.net/media/category/a/p/apps.12149.69254151049826377.e1b53de3-db13-4bf7-bff8-cfd99840b5eb.2d02bedd-8dd9-4139-9c2e-441992a14ecc_1590754104_1.jpg);
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
@@ -28,12 +36,15 @@
   border: 1px solid #000;
   align-items: center;
   flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff55;
 }
 
 .car-select__title,
 .oponents-select__title,
 .compare__title {
   text-align: center;
+  margin: 0 0 10px;
 }
 
 .car-select__list {
@@ -66,6 +77,11 @@
   margin: 0;
 }
 
+.car-select__stat-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .car-select__add-stat {
   visibility: hidden;
 }
@@ -77,6 +93,22 @@
 
 .car-select__active .car-select__add-stat {
   visibility: visible;
+}
+
+.panel {
+  display: flex;
+  gap: 10px;
+  max-width: 358px;
+  justify-content: center;
+  margin: 0 auto 10px;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.panel__power-reserv {
+  background-color: #efefef;
+  padding-left: 5px;
+  width: 200px;
 }
 
 .road {
@@ -110,20 +142,11 @@
   width: 90px;
   height: 40px;
   border-radius: 4px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
-
-/* .road__car_civil {
-  background: url(https://c1.klipartz.com/pngpicture/530/76/sticker-png-cars-vehicle-sports-car-hino-dutro-truck-hino-motors-car-door.png)
-    no-repeat center/cover;
-}
-
-.road__car_sport {
-  background-image: url(https://wall.grahapatria.com/wp-content/uploads/2022/09/887d9872643d696f81599530d6e79fc1.png);
-}
-
-.road__car_military {
-  background-image: url(https://farkopros.ru/upload/iblock/e0a/em7irw1bij0uvhji2cugorbq4ouyphhy/Thule%20Motion%20XT%20XL%20Серебристый.jpg);
-} */
 
 .road__car_user {
   background-color: #18ce18;
@@ -133,6 +156,63 @@
   background-color: #ea1818;
 }
 
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup_hidden {
+  visibility: hidden;
+}
+
+.popup__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  background: no-repeat center/ cover
+    url(https://phonoteka.org/uploads/posts/2021-04/1619222035_2-phonoteka_org-p-fon-dlya-gonok-2.jpg);
+  max-width: 1000px;
+}
+
+.popup__compare-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 10px;
+}
+
+.popup__button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.car {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  background-color: #ffffffbb;
+}
+
 .done {
-  background-color: #b3fcb3;
+  background-color: #b3fcb356;
 }
