@@ -4,6 +4,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: no-repeat center/ cover
     url(https://static.kinguin.net/media/category/a/p/apps.12149.69254151049826377.e1b53de3-db13-4bf7-bff8-cfd99840b5eb.2d02bedd-8dd9-4139-9c2e-441992a14ecc_1590754104_1.jpg);
+  height: 100vh;
 }
 
 .container {
