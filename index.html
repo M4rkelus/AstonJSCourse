@@ -1,78 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script defer type="module" src="script.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script defer type="module" src="./js/script.js"></script>
+    <title>Посты</title>
   </head>
   <body class="content">
-    <header class="header">
-      <nav class="header__nav" aria-label="Навигация">
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#/posts">Посты</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#/comments">Коментарии</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#/albums">Альбомы</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#/photos">Фотографии</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="#/todos">Задачи</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="main" id="main"></main>
-
-    <nav class="pagination" aria-label="Пагинация">
-      <ul class="pagination__list">
-        <li class="pagination__prev">
-          <a class="pagination__link" href="#">Предыдущая</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">1</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">2</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">3</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">4</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">5</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">6</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">7</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">8</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">9</a>
-        </li>
-        <li class="pagination__page">
-          <a class="pagination__link" href="#">10</a>
-        </li>
-        <li class="pagination__next">
-          <a class="pagination__link" href="#">Следующая</a>
-        </li>
-      </ul>
-    </nav>
+    <main class="main">
+      <section class="posts"></section>
+    </main>
+    <div class="paginator"></div>
     <button class="button-up">Вверх</button>
   </body>
 </html>
